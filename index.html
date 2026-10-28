@@ -1,0 +1,94 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Inventory & Billing System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Smart Inventory & Billing System</h1>
+        <p>Manage products, generate bills, and share through WhatsApp</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Add Product</h2>
+
+            <form id="productForm">
+                <input type="text" id="productName"
+                       placeholder="Product Name" required>
+
+                <input type="number" id="productPrice"
+                       placeholder="Price (₹)" min="0.01" step="0.01" required>
+
+                <input type="number" id="productStock"
+                       placeholder="Stock Quantity" min="0" step="1" required>
+
+                <button type="submit">Add Product</button>
+            </form>
+
+            <h2>Available Inventory</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryList"></tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Generate Customer Bill</h2>
+
+            <input type="text" id="customerName"
+                   placeholder="Customer Name">
+
+            <input type="tel" id="customerPhone"
+                   placeholder="WhatsApp Number with Country Code">
+
+            <div class="product-row">
+                <select id="productSelect"></select>
+                <input type="number" id="quantity"
+                       min="1" step="1" value="1">
+                <button type="button" id="addItem">Add Item</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="billItems"></tbody>
+            </table>
+
+            <div class="total">
+                <h3>Grand Total: <span id="grandTotal">₹0.00</span></h3>
+            </div>
+
+            <div class="buttons">
+                <button id="generateBill">Generate Bill</button>
+                <button id="printBill">Print / Save PDF</button>
+                <button id="whatsappBill">Share on WhatsApp</button>
+            </div>
+
+            <div id="billPreview"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
