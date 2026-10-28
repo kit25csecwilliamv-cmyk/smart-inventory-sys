@@ -1,0 +1,208 @@
+```css
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+header {
+    background: #173b70;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #0000000d;
+    min-width: 0;
+}
+
+h2 {
+    color: #173b70;
+    font-size: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 11px;
+    margin: 7px 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+button {
+    border: none;
+    border-radius: 6px;
+    padding: 11px 14px;
+    margin: 5px 0;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.88;
+}
+
+.product-row {
+    display: grid;
+    grid-template-columns: 1fr 75px auto;
+    gap: 8px;
+    align-items: center;
+    margin: 12px 0;
+}
+
+.product-row input,
+.product-row select {
+    min-width: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 13px;
+}
+
+th, td {
+    padding: 10px 6px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+th {
+    background: #f1f5f9;
+}
+
+.total {
+    background: #eff6ff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-align: right;
+}
+
+.total h3 {
+    margin: 8px 0;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 12px;
+}
+
+#generateBill {
+    background: #2563eb;
+}
+
+#printBill {
+    background: #475569;
+}
+
+#whatsappBill {
+    background: #16a34a;
+}
+
+#billPreview {
+    margin-top: 20px;
+}
+
+.invoice {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 18px;
+    overflow-wrap: anywhere;
+}
+
+.invoice h2 {
+    text-align: center;
+}
+
+.remove-item {
+    background: #dc2626;
+    padding: 5px 8px;
+}
+
+@media (max-width: 850px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 14px;
+    }
+
+    .product-row {
+        grid-template-columns: 1fr 65px;
+    }
+
+    .product-row button {
+        grid-column: 1 / -1;
+    }
+
+    table {
+        font-size: 11px;
+    }
+
+    th, td {
+        padding: 8px 4px;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+    }
+
+    header, main > .card:first-child,
+    main > .card:nth-child(2) > h2,
+    main > .card:nth-child(2) > input,
+    main > .card:nth-child(2) > .product-row,
+    main > .card:nth-child(2) > table,
+    .total, .buttons {
+        display: none !important;
+    }
+
+    main {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    .card {
+        box-shadow: none;
+        padding: 0;
+    }
+
+    #billPreview {
+        margin: 0;
+    }
+}
+```
